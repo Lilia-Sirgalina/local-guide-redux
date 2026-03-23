@@ -1,0 +1,337 @@
+body {
+    background-color: #F8F8F8;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #212020;
+    margin-top: 10px;
+}
+
+.mobileMenuBtn {
+    display: none;
+}
+
+.navLinks {
+    background-color: #EA0558;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.link {
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.headLine {
+    display: flex;
+}
+
+.heading {
+    flex: 1;
+    text-align: center;
+    font-size: 21px;
+}
+
+.langBtn {    
+    border: none;    
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.langContainer {    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Home {
+    background-image: url(./assets/view.avif);    
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;    
+    min-height: 100vh;    
+    background-attachment: fixed;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #212020;
+    background-color: rgba(239, 243, 245, 0.9); 
+    padding: 10px;
+    border-radius: 10px; 
+    text-align: center;   
+}
+
+.supermarkets, .top3beaches {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;     
+}
+
+.storeCard { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 300px;
+    height: 500px;    
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif; 
+    text-align: center;   
+    background-color: rgba(239, 243, 245, 0.9);   
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.12);    
+}
+
+h3, h4 {
+    color: #EA0558;
+}
+
+
+.linkToGoogle {    
+    padding: 10px 15px;    
+    background-size: 200% 200%;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;   
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-position 0.6s ease, transform 0.2s ease;       
+}
+
+.colorMarketLink {
+    background: linear-gradient(
+        135deg,
+        rgb(18, 90, 110),
+        rgb(35, 140, 165),
+        rgb(18, 90, 110)
+    );
+}
+
+.linkToGoogle:hover {
+    background-position: right center;
+    transform: translateY(-1px);
+}
+
+.googleLink {
+    color: white;
+    font-size: 15px;
+}
+
+.trashInfo {
+    margin: auto;
+    padding: 20px 50px;
+    flex-direction: column;
+    width: 60%;
+    border-radius: 30px;
+    background-color: rgba(239, 243, 245, 0.9);   
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.12); 
+    font-family: "Montserrat", sans-serif; 
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.Beaches {
+    background-image: url(./assets/costa-maresme1.jpg);    
+}
+
+.beachesCard {     
+    margin-top: 20px;
+    width: 300px;
+    height: 630px;    
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif; 
+    text-align: center;   
+    background-color: rgba(239, 243, 245, 0.9);   
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.12);    
+}
+
+.topBeachesCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beaches-container {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;     
+}
+
+.colorBeachesLink {
+    background: linear-gradient(
+  135deg,
+  rgb(210, 180, 120),
+  rgb(238, 214, 160),
+  rgb(210, 180, 120)
+);
+}
+
+.googleLinkBeach {
+    color: #212020;
+    font-size: 15px;
+}
+
+.beachesButtons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filteredBtn {        
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;    
+    font-family: "Montserrat", sans-serif; 
+    font-weight: 700;
+    font-size: 15px;
+    margin: 5px 20px;
+    padding: 10px;
+}
+
+.beachBtn {
+    background-color: rgb(210, 180, 120);
+}
+
+.recommendedHeader {    
+    margin: 0;
+    padding: 0;
+}
+
+.Restaurants {
+    background-image: url("./assets/plate1.jpg");    
+}
+
+span {
+    color: #EA0558;
+    font-weight: 600;
+}
+
+.restaurantsCard {
+    margin-top: 20px;
+    width: 300px;
+    height: 670px;    
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif; 
+    text-align: center;   
+    background-color: rgba(239, 243, 245, 0.9);   
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.12); 
+}
+
+.topRestaurantsCarrousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorRestaurantsLink {
+    background: linear-gradient(
+        135deg,
+        rgb(24, 119, 24),
+        rgb(44, 159, 44),
+        rgb(24, 119, 24)
+    );
+}
+
+.restaurantBtn {
+    background-color: rgb(52, 190, 52);   
+}
+
+
+@media (max-width: 768px) {
+
+    
+    .mobileMenuBtn {
+        display: flex;
+        align-items: center;
+        z-index: 20;        
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .navLinks.active {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;    
+        width: 100%;        
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .langBtn {       
+        font-size: 15px;    
+    }
+
+    h2 {
+        font-size: 22px;
+    }   
+
+    .filteredBtn {     
+        font-size: 12px;
+        margin: 5px 10px;    
+    }
+
+    .beachesCard {     
+        margin-top: 5px;    
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+
+    .beaches-container {       
+        gap: 0;     
+    }
+
+    .trashInfo {           
+        padding: 10px 40px;    
+        width: 70%;   
+        margin-bottom: 10px;
+    }
+}
