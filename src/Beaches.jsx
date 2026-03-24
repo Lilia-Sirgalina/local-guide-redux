@@ -4,21 +4,25 @@ import { useTranslation } from "react-i18next";
 import { beachFilters } from "./data/filters";
 import prevBtn from './icons8-back-64.png'
 import nextBtn from './icons8-forward-64.png'
+import { useDispatch } from "react-redux";
+import { getFilteredBeaches } from "./redux/beachesSlice";
 
 const Beaches = () => {
 
     const {i18n, t} = useTranslation();
     const lang = i18n.language.split("-")[0];
 
-    const [playas, setPlayas] = useState(beaches);
+    const playas = useSelector(getFilteredBeaches);
+    const dispatch = useDispatch();
+
     const top3Beaches = beaches.slice(0, 3);
     const [topBeaches, setTopBeaches] = useState(0);
     const {id, name, image, description, gps} = top3Beaches[topBeaches];
     
-    const filteredBeaches = (key, value) => {
-        const filtered = beaches.filter((beach) => beach[key] === value);
-        setPlayas(filtered);
-    };
+    // const filteredBeaches = (key, value) => {
+    //     const filtered = beaches.filter((beach) => beach[key] === value);
+    //     setPlayas(filtered);
+    // };
 
     const previous = () => {
         setTopBeaches(beaches => {
@@ -80,10 +84,16 @@ const Beaches = () => {
             <div className="beachesButtons">
 
                 {beachFilters.map(filter => (
-                    <button key={filter.label} className="filteredBtn beachBtn" onClick={() => filteredBeaches(filter.type, filter.value)}>{t(filter.label)}</button>
+                    <button key={filter.label} className="filteredBtn beachBtn" onClick={() => dispatch(filterCategory({
+    key: filter.type,
+    value: filter.value
+}))}>{t(filter.label)}</button>
                 ))}
 
-                <button className="filteredBtn beachBtn" onClick={() => setPlayas(beaches)}>{t("show all")}</button>                
+                <button className="filteredBtn beachBtn" onClick={() => dispatch(filterCategory({
+    key: null,
+    value: "ALL"
+}))}>{t("show all")}</button>                
             </div>
 
             <div className="beaches-container">                   
