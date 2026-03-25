@@ -2,12 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import { beaches } from "../data/beaches";
 
 
+const allBeaches = beaches;
+
 export const beachesSlice = createSlice({
-    name: 'beaches',
+    name: 'beachesState',
 
     initialState: {
-        allBeaches: beaches,
-        filteredBeaches: beaches
+        filteredBeaches: allBeaches,        
     },
 
     reducers: {        
@@ -15,9 +16,9 @@ export const beachesSlice = createSlice({
             const { key, value } = action.payload
 
             if (value === "ALL") {
-                state.filteredBeaches = state.allBeaches
+                state.filteredBeaches = allBeaches
             } else {
-                state.filteredBeaches = state.allBeaches.filter(
+                state.filteredBeaches = allBeaches.filter(
                     beach => beach[key] === value
                 )
             }
@@ -25,7 +26,7 @@ export const beachesSlice = createSlice({
     },
 })
 
-export const getFilteredBeaches = state => state.beaches.filteredBeaches
-export const { filterCategory} = beachesSlice.actions
+export const getFilteredBeaches = state => state.beachesState.filteredBeaches;
 
+export const { filterCategory} = beachesSlice.actions;
 export default beachesSlice.reducer

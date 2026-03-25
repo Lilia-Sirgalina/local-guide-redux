@@ -4,6 +4,8 @@ import { useState } from "react";
 import { restaurantFilters } from "./data/filters";
 import prevBtn from './icons8-back-64.png'
 import nextBtn from './icons8-forward-64.png'
+import { getFilteredRestaurants, filterCategory } from "./redux/restaurantsSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const Restaurants = () => {
@@ -11,15 +13,12 @@ const Restaurants = () => {
     const {i18n, t} = useTranslation();
     const lang = i18n.language.split("-")[0];
 
-    const [comida, setComida] = useState(restaurants);
+    const comida = useSelector(getFilteredRestaurants);    
+    const dispatch = useDispatch();
+
     const top3Restaurants = restaurants.slice(0, 3);
     const [topRestaurants, setTopRestaurants] = useState(0);
     const {id, name, image, description, price, rating, source, mediterranean, chinese, localFood} = top3Restaurants[topRestaurants];
-
-    const filteredRestaurants = (key, value) => {
-        const filtered = restaurants.filter((restaurant) => restaurant[key] === value);
-        setComida(filtered);
-    };
 
     const cuisine = (restaurant) => {
         if (restaurant.mediterranean && restaurant.localFood) {
@@ -90,10 +89,10 @@ const Restaurants = () => {
             <div className="beachesButtons">               
 
                 {restaurantFilters.map(filter => (
-                    <button key={filter.label} className="filteredBtn restaurantBtn" onClick={() => filteredRestaurants(filter.type, filter.value)}>{t(filter.label)}</button>
+                    <button key={filter.label} className="filteredBtn restaurantBtn" onClick={() => dispatch(filterCategory({key: filter.type, value: filter.value}))}>{t(filter.label)}</button>
                 ))}
 
-                <button className="filteredBtn restaurantBtn" onClick={() => setComida(restaurants)}>{t("show all")}</button>                
+                <button className="filteredBtn restaurantBtn" onClick={() => dispatch(filterCategory({key: null, value: "ALL"}))}>{t("show all")}</button>                
             </div>
 
             <div className="beaches-container">                   

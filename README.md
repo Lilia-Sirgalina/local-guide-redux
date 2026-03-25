@@ -1,11 +1,11 @@
-# Local Guide
+# Local Guide with Redux
 
 ## Demo  
-🔗 View the app on Netlify (https://local-guide-project.netlify.app)
+🔗 View the app on Netlify (https://local-guide-redux.netlify.app)
 
 ## Project Description
 
-**Local Guide** is a React application created to help tourists visiting our town.  
+**Local Guide with Redux** is a React application created to help tourists visiting our town.  
 The app provides a curated list of useful local places and attractions, making it easier for visitors to navigate the area and discover important locations.
 
 Tourists can find information about:
@@ -23,7 +23,7 @@ Project implementation includes:
 - Data stored in separate files as arrays
 - **React Router** for navigation and page routing
 - Rendering attraction cards using the `.map()` method
-- Filtering cards by categories using the `.filter()` method
+- **Filtering cards by categories using Redux and the `.filter()` method**
 - A **Top-3 must-visit places slider**
 - **Multilingual support** using `react-i18next` and the `useTranslation` hook
 - **Responsive design** optimized for mobile devices
@@ -57,6 +57,7 @@ No installation is required.
 
 ## Technologies Used
 - React
+- Redux
 - Vite
 - React Router
 - i18next (react-i18next)

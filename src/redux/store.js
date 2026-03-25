@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { beaches } from './beachesSlice'
+import beachesState from './beachesSlice'
+import restaurantsState from './restaurantsSlice'
 
 export const store = configureStore({
   reducer: {
-    beaches
+    beachesState,
+    restaurantsState
   },
 })
