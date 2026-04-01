@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import menuButton from './burger-menu.png'
-import closeButton from './close-menu.png'
+import menuButton from './assets/burger-menu.png'
+import closeButton from './assets/close-menu.png'
 
 const Menu = ({ menuOpen, openMenu, closeMenu }) => {
 

@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { restaurants } from "./data/restaurants";
 import { useState } from "react";
 import { restaurantFilters } from "./data/filters";
-import prevBtn from './icons8-back-64.png'
-import nextBtn from './icons8-forward-64.png'
+import prevBtn from './assets/icons8-back-64.png'
+import nextBtn from './assets/icons8-forward-64.png'
 import { getFilteredRestaurants, filterCategory } from "./redux/restaurantsSlice";
 import { useSelector, useDispatch } from "react-redux";
 

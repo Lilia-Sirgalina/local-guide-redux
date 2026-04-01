@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useTranslation } from "react-i18next";
 import {supermarkets} from './data/supermarkets.jsx'
-import prevBtn from './icons8-back-64.png'
-import nextBtn from './icons8-forward-64.png'
+import prevBtn from './assets/icons8-back-64.png'
+import nextBtn from './assets/icons8-forward-64.png'
 
 const Home = () => {
 

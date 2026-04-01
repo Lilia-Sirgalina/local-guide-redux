@@ -2,8 +2,8 @@ import { useState } from "react";
 import { beaches } from "./data/beaches";
 import { useTranslation } from "react-i18next";
 import { beachFilters } from "./data/filters";
-import prevBtn from './icons8-back-64.png'
-import nextBtn from './icons8-forward-64.png'
+import prevBtn from './assets/icons8-back-64.png'
+import nextBtn from './assets/icons8-forward-64.png'
 import { getFilteredBeaches, filterCategory } from "./redux/beachesSlice";
 import { useSelector, useDispatch } from "react-redux";
 
