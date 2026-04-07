@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { restaurants } from "./data/restaurants";
 import { useState } from "react";
 import { restaurantFilters } from "./data/filters";
+import useCarousel from './hooks/useCarousel.js';
 import prevBtn from './assets/icons8-back-64.png'
 import nextBtn from './assets/icons8-forward-64.png'
 import { getFilteredRestaurants, filterCategory } from "./redux/restaurantsSlice";
@@ -17,8 +18,8 @@ const Restaurants = () => {
     const dispatch = useDispatch();
 
     const top3Restaurants = restaurants.slice(0, 3);
-    const [topRestaurants, setTopRestaurants] = useState(0);
-    const {id, name, image, description, price, rating, source, mediterranean, chinese, localFood} = top3Restaurants[topRestaurants];
+    const { currentItem, currentIndex, previous, next } = useCarousel(top3Restaurants);
+    const {id, name, image, description, price, rating, source, mediterranean, chinese, localFood} = currentItem;
 
     const cuisine = (restaurant) => {
         if (restaurant.mediterranean && restaurant.localFood) {
@@ -29,26 +30,7 @@ const Restaurants = () => {
         if (restaurant.chinese) return t("asian");
         return "";
     };
-
-    const previous = () => {
-        setTopRestaurants(restaurants => {
-            restaurants --;
-            if(restaurants < 0) {
-                restaurants = top3Restaurants.length - 1;
-            }
-        return restaurants;
-        })  
-    }
-    
-    const next = () => {
-        setTopRestaurants(restaurants => {
-            restaurants ++;
-            if(restaurants > top3Restaurants.length - 1) {
-                restaurants = 0;
-            }
-        return restaurants;
-    })  
-    }
+        
 
     return (
         <div className="Restaurants image">
@@ -75,7 +57,7 @@ const Restaurants = () => {
                         <p>{description?.[lang] || description?.en}</p>
                         <p><span>{t("rating")}</span>{rating}</p>
                         <p><span>{t("price")} </span>{price}</p>
-                        <p><span>{t("kitchen")}</span>{cuisine(top3Restaurants[topRestaurants])}</p>
+                        <p><span>{t("kitchen")}</span>{cuisine(top3Restaurants[currentIndex])}</p>
                         <button className='linkToGoogle colorRestaurantsLink'><a className='googleLink' href={source} target='_blank'>{t("google")}</a></button>
                     </div>
 

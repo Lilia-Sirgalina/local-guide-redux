@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { beaches } from "./data/beaches";
 import { useTranslation } from "react-i18next";
 import { beachFilters } from "./data/filters";
+import useCarousel from './hooks/useCarousel.js';
 import prevBtn from './assets/icons8-back-64.png'
 import nextBtn from './assets/icons8-forward-64.png'
 import { getFilteredBeaches, filterCategory } from "./redux/beachesSlice";
@@ -17,29 +17,8 @@ const Beaches = () => {
     const dispatch = useDispatch();
 
     const top3Beaches = beaches.slice(0, 3);
-    const [topBeaches, setTopBeaches] = useState(0);
-    const {id, name, image, description, gps} = top3Beaches[topBeaches];
-    
-    
-    const previous = () => {
-        setTopBeaches(beaches => {
-            beaches --;
-            if(beaches < 0) {
-                beaches = top3Beaches.length - 1;
-            }
-        return beaches;
-        })  
-    }
-    
-    const next = () => {
-        setTopBeaches(beaches => {
-            beaches ++;
-            if(beaches > top3Beaches.length - 1) {
-                beaches = 0;
-            }
-        return beaches;
-        })  
-    }
+    const { currentItem, previous, next } = useCarousel(top3Beaches);
+    const {id, name, image, description, gps} = currentItem;     
 
     
     return (

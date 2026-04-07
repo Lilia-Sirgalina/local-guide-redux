@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import { useTranslation } from "react-i18next";
 import {supermarkets} from './data/supermarkets.jsx'
+import useCarousel from './hooks/useCarousel.js';
 import prevBtn from './assets/icons8-back-64.png'
 import nextBtn from './assets/icons8-forward-64.png'
 
@@ -8,28 +8,9 @@ const Home = () => {
 
     const {i18n, t} = useTranslation();
     const lang = i18n.language.split("-")[0];
-    const [markets, setMarkets] = useState(0);
-    const {id, name, image, description, source} = supermarkets[markets];    
-
-    const previous = () => {
-        setMarkets(markets => {
-            markets --;
-            if(markets < 0) {
-                markets = supermarkets.length - 1;
-            }
-        return markets;
-        })  
-    }
-    
-    const next = () => {
-        setMarkets(markets => {
-            markets ++;
-            if(markets > supermarkets.length - 1) {
-                markets = 0;
-            }
-        return markets;
-        })  
-    }
+    const { currentItem, previous, next } = useCarousel(supermarkets);
+    const { id, name, image, description, source } = currentItem;   
+   
     
     return (
         <div className='Home image'>
