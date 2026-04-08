@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 import './App.css'
 import Home from './Home';
-import Beaches from './Beaches';
-import Restaurants from './Restaurants';
+import Beaches from './BeachesComponents/Beaches';
+import Restaurants from './RestaurantsComponents/Restaurants';
 import Barcelona from './Barcelona';
 import ActiveAndNature from './ActiveAndNature';
 import Shopping from './Shopping';

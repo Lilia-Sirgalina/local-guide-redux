@@ -24,8 +24,11 @@ Project implementation includes:
 - **React Router** for navigation and page routing
 - Rendering attraction cards using the `.map()` method
 - **Filtering cards by categories using Redux and the `.filter()` method**
+- Redux store and slice are used to manage application state and handle category filtering
 - A **Top-3 must-visit places slider**
+- Custom hook `useCarousel` for carousel/slider logic
 - **Multilingual support** using `react-i18next` and the `useTranslation` hook
+- **Component decomposition into smaller, logically separated components**
 - **Responsive design** optimized for mobile devices
 
 No installation is required.
@@ -43,11 +46,13 @@ No installation is required.
 
 ## Features:
 - Tourist-friendly guide for local places and attractions
-- Category filtering for locations
+- Category filtering powered by Redux
 - Dynamic card rendering using `.map()`
 - Client-side routing with React Router
 - Internationalization with `react-i18next`
-- Top attractions slider
+- Top attractions slider with custom carousel logic
+- Reusable custom hook (`useCarousel`)
+- Modular and well-structured components
 - Mobile responsive design
 - Organized data structure using arrays
 
